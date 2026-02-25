@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Cotação de Transporte - SVS LOG</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+}
+
+.top-bar {
+  background-color: #0b3d91;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.top-bar img {
+  max-width: 300px;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.form-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 600px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0b3d91;
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #0b3d91;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #092f6d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+  <img src="https://svslog.com.br/wp-content/uploads/2025/03/svs-log-1024x302.png" alt="SVS LOG">
+</div>
+
+<div class="container">
+<div class="form-container">
+
+<h2>Solicitação de Cotação</h2>
+
+<form action="https://formsubmit.co/higor@svslog.com.br" method="POST">
+
+<!-- CONFIGURAÇÕES -->
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="📦 NOVA COTAÇÃO - SVS LOG">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_replyto" value="email">
+<input type="hidden" name="_cc" value="pedro@svslog.com.br">
+<input type="hidden" name="_autoresponse" value="Recebemos sua solicitação de cotação. Nossa equipe da SVS LOG entrará em contato em breve.">
+
+<!-- DADOS DO CLIENTE -->
+<h3>Dados do Cliente</h3>
+<input type="text" name="NOME" placeholder="Nome / Empresa" required>
+<input type="email" name="EMAIL" placeholder="Email" required>
+<input type="tel" name="TELEFONE" placeholder="Telefone">
+<input type="text" name="CPF_CNPJ" placeholder="CPF ou CNPJ">
+
+<!-- INFORMAÇÕES DA CARGA -->
+<h3>Informações da Carga</h3>
+
+<div class="grid-2">
+  <input type="number" name="QUANTIDADE_VOLUMES" placeholder="Quantidade de Volumes" required>
+  
+  <select name="TIPO_EMBALAGEM" required>
+    <option value="">Tipo de Embalagem</option>
+    <option value="Caixa">Caixa</option>
+    <option value="Pallet">Pallet</option>
+    <option value="Container">Container</option>
+    <option value="Granel">Granel</option>
+    <option value="Outro">Outro</option>
+  </select>
+</div>
+
+<div class="grid-2">
+  <input type="number" step="0.01" name="PESO_BRUTO_KG" placeholder="Peso Bruto (kg)" required>
+  <input type="number" step="0.01" name="PESO_LIQUIDO_KG" placeholder="Peso Líquido (kg)">
+</div>
+
+<h3>Dimensões por Volume</h3>
+
+<div class="grid-3">
+  <input type="number" step="0.01" name="LARGURA" placeholder="Largura" required>
+  <input type="number" step="0.01" name="ALTURA" placeholder="Altura" required>
+  <input type="number" step="0.01" name="COMPRIMENTO" placeholder="Comprimento" required>
+</div>
+
+<select name="UNIDADE_MEDIDA" required>
+  <option value="">Unidade de Medida</option>
+  <option value="cm">Centímetros</option>
+  <option value="m">Metros</option>
+</select>
+
+<h3>Modal de Transporte</h3>
+
+<select name="MODAL_TRANSPORTE" required>
+  <option value="">Selecione o Modal</option>
+  <option value="Rodoviário">Rodoviário</option>
+  <option value="Aéreo">Aéreo</option>
+  <option value="Marítimo">Marítimo</option>
+  <option value="Multimodal">Multimodal</option>
+</select>
+
+<textarea name="DESCRICAO_MERCADORIA" rows="4" placeholder="Descrição da mercadoria"></textarea>
+
+<button type="submit">Enviar Cotação</button>
+
+</form>
+
+</div>
+</div>
+
+</body>
+</html>
