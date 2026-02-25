@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Cotação de Transporte - SVS LOG</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+}
+
+/* FAIXA AZUL */
+.top-bar {
+  background-color: #0b3d91;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.top-bar img {
+  max-width: 300px;
+  height: auto;
+}
+
+/* FORMULÁRIO */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.form-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 600px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0b3d91;
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #0b3d91;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #092f6d;
+}
+</style>
+</head>
+
+<body>
+
+<!-- FAIXA AZUL COM LOGO -->
+<div class="top-bar">
+  <img src="https://svslog.com.br/wp-content/uploads/2025/03/svs-log-1024x302.png" alt="SVS LOG">
+</div>
+
+<div class="container">
+<div class="form-container">
+
+<h2>Solicitação de Cotação</h2>
+
+<form action="https://formsubmit.co/seuemail@empresa.com" method="POST">
+<input type="hidden" name="_captcha" value="false">
+
+<!-- Dados do Cliente -->
+<input type="text" name="nome" placeholder="Nome / Empresa" required>
+<input type="email" name="email" placeholder="Email" required>
+<input type="tel" name="telefone" placeholder="Telefone">
+
+<h3>Informações da Carga</h3>
+
+<div class="grid-2">
+  <input type="number" name="quantidade_volumes" placeholder="Quantidade de Volumes" required>
+  
+  <select name="tipo_embalagem" required>
+    <option value="">Tipo de Embalagem</option>
+    <option value="Caixa">Caixa</option>
+    <option value="Pallet">Pallet</option>
+    <option value="Container">Container</option>
+    <option value="Granel">Granel</option>
+    <option value="Outro">Outro</option>
+  </select>
+</div>
+
+<div class="grid-2">
+  <input type="number" step="0.01" name="peso_bruto" placeholder="Peso Bruto (kg)" required>
+  <input type="number" step="0.01" name="peso_liquido" placeholder="Peso Líquido (kg)">
+</div>
+
+<h3>Dimensões por Volume</h3>
+
+<div class="grid-3">
+  <input type="number" step="0.01" name="largura" placeholder="Largura" required>
+  <input type="number" step="0.01" name="altura" placeholder="Altura" required>
+  <input type="number" step="0.01" name="comprimento" placeholder="Comprimento" required>
+</div>
+
+<select name="unidade_dimensao" required>
+  <option value="">Unidade de Medida</option>
+  <option value="cm">Centímetros</option>
+  <option value="m">Metros</option>
+</select>
+
+<h3>Modal de Transporte</h3>
+
+<select name="modal_transporte" required>
+  <option value="">Selecione o Modal</option>
+  <option value="Rodoviário">Rodoviário</option>
+  <option value="Aéreo">Aéreo</option>
+  <option value="Marítimo">Marítimo</option>
+  <option value="Multimodal">Multimodal</option>
+</select>
+
+<textarea name="descricao_mercadoria" rows="4" placeholder="Descrição da mercadoria"></textarea>
+
+<button type="submit">Enviar Cotação</button>
+
+</form>
+
+</div>
+</div>
+
+</body>
+</html>
